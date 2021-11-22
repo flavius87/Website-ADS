@@ -1,0 +1,65 @@
+
+/*===============Propiedades Globales================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/*===================MENU==========================*/
+
+ #menu a, button{
+     font-size: 18px !important;
+     font-weight: 600;
+    
+ }
+
+ #menu a{
+     color:#3f3f3f;
+     
+ }
+
+ #menu ul li:hover{
+    background-color: #212529 !important;
+ }
+
+ #menu ul li a:hover{
+     color: white !important;
+     background-color: #3f3f3f !important;
+ }
+/*=========================SOCIAL================================*/
+
+#iconos  i {
+    font-size: 26px;
+    padding: 0 8px;
+    color:#f3f3f3;
+}
+
+#iconos :hover{
+    cursor: pointer;
+}
+
+.bi-facebook:hover{
+    color: #3b5998 !important;
+}
+
+.bi-instagram:hover{
+    color: #bc2a8d !important;
+}
+
+.bi-whatsapp:hover{
+    color: #25D366 !important;
+}
+
+.bi-envelope:hover{
+    color: #EA4335 !important;
+}
+
+/*===================SLIDER DE IMAGENES==========================*/
+
+.carousel-inner {
+    max-height:39rem !important;
+}
