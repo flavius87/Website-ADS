@@ -35,13 +35,13 @@ def constructions(request):
 def inProgress(request):
 
     return render(request, 'obras/inprogress.html', {
-        'title': 'En proceso'
+        'title': 'Obras en proceso'
     })
 
 def concluded(request):
 
     return render(request, 'obras/concluded.html', {
-        'title': 'Entregadas'
+        'title': 'Obras entregadas'
     })
 
 def contact(request):

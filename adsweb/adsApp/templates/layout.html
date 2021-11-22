@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../static/css/main.css">
     <link rel="stylesheet" href="../static/css/whatsapp.css">
 
+    <!-- Logo -->
+    <div id="logotipo"></div>
     <title>ADS - {% block title %} {% endblock %}</title>
 
     <!-- Bootstrap -->
@@ -78,6 +80,33 @@
      <!----- Content ----->
      <div id="content">
         {% block content %}
+             <!----- Intro ----->
+
+              <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-50 m-auto" id="intro">
+                <h1 class="p-3 fs-2 border-top border-3">Realizamos construcción en seco, somos especialistas en<span class="text-primary"> Wood Frame<span/></h1>
+                <p class="p-3  fs-4">
+                    En <span class="text-primary">ADS</span> hacemos realidad tu vivienda, desde los cimientos hasta el último detalle. Entregamos llave en mano, 
+                    con todas las instalaciones y servicios funcionando.         
+                </p>
+              </section>
+
+            <!----- Obras ----->
+
+            <div id="constructions">
+            
+            </div>
+
+            <!----- Servicios ----->
+
+            <div id="services">
+              
+            </div>
+            
+            <!----- Sobre nosotros ----->
+
+            <div id="about">
+            
+            </div>
         {% endblock %}
     </div>
     

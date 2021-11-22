@@ -63,3 +63,17 @@ body {
 .carousel-inner {
     max-height:39rem !important;
 }
+
+/*===================FOOTER==========================*/
+
+footer {
+    width: auto;
+    background-color: #212529;
+    border: 1px;
+    color: #f3f3f3;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+
+}
