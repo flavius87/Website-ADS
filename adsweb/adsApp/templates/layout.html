@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../static/css/whatsapp.css">
 
     <!-- Logo -->
-    <div id="logotipo"></div>
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/logo-ads-alta.ico">
     <title>ADS - {% block title %} {% endblock %}</title>
 
     <!-- Bootstrap -->
@@ -35,9 +35,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient" id="menu">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="{% url 'index' %}">
             <span class="text-dark fs-4 fw-bold"> 
-              <img src="../static/images/logo-ads-alta.png" alt="logo-ads" width="144" height="94">ADS Construcción en seco
+              <img src="../static/images/logo-ads-alta.png" alt="logo-ads" width="115" height="75">ADS Construcción en seco
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,32 +45,39 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-              </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="{% url 'sobre_nosotros' %}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Sobre Nosotros
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">¿Quiénes somos?</a></li>
-                  <li><a class="dropdown-item" href="#">¿Dónde construímos?</a></li>
+                  {% for page in pages %}
+                    {% if page.3 == True %}
+                      <li><a class="dropdown-item" href="{% url 'page' page.2 %}">{{page.1}}</a></li>
+                    {% endif %}
+                  {% endfor %}
                 </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="{% url 'obras' %}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Obras
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">En proceso</a></li>
-                  <li><a class="dropdown-item" href="#">Entregadas</a></li>
+                  {% for page in pages %}
+                    {% if page.4 == True %}
+                  <li><a class="dropdown-item" href="{% url 'page' page.2 %}">{{page.1}}</a></li>
+                    {% endif %}
+                  {% endfor %}
                 </ul>
               </li>
+                  {% for page in pages %}
+                    {% if page.3 == False and page.4 == False %}
               <li class="nav-item">
-                <a class="nav-link" href="#">Servicios</a>
+                  <a class="nav-link" href="{% url 'page' page.2 %}">{{page.1}}</a> 
               </li>
+                    {% endif %}
+                  {% endfor %}
               <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
               </li>
             </ul>
           </div>
@@ -82,18 +89,23 @@
         {% block content %}
              <!----- Intro ----->
 
-              <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-50 m-auto" id="intro">
+              <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-60 m-auto" id="intro">
                 <h1 class="p-3 fs-2 border-top border-3">Realizamos construcción en seco, somos especialistas en<span class="text-primary"> Wood Frame<span/></h1>
                 <p class="p-3  fs-4">
-                    En <span class="text-primary">ADS</span> hacemos realidad tu vivienda, desde los cimientos hasta el último detalle. Entregamos llave en mano, 
-                    con todas las instalaciones y servicios funcionando.         
+                    En <span class="text-primary">ADS</span> hacemos realidad tu vivienda, desde los cimientos hasta el último detalle. <span class="text-primary">Entregamos llave en mano</span>, 
+                    con todas las instalaciones y servicios funcionando. 
+                    Trabajamos de acuerdo a las necesidades del cliente, ofreciendo una <span class="text-primary">construcción rápida, eficiente y resistente</span>. 
+                    Llevamos adelante proyectos de gran calidad, eligiendo los mejores materiales, con especial cuidado de los detalles y terminaciones.
+                    Si estás pensando en construir, te invitamos a que nos conozcas mejor para que puedas recibir el asesoramiento adecuado. 
+                    En ADS te espera un equipo profesional, compuesto por personas sencillas y cordiales, que trabajan con seriedad.
+        
                 </p>
               </section>
 
             <!----- Obras ----->
 
             <div id="constructions">
-            
+              
             </div>
 
             <!----- Servicios ----->
@@ -123,5 +135,6 @@
        
   </body>
 
-  <footer>&copy; Flavio Scheck</footer>
+  <br>
+  <div class="card-footer bg-dark bg-gradient d-flex"> &copy; ADS - {% now "Y" %} | Desarrollado por flavius </div>
 </html>

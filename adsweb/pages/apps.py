@@ -1,7 +1,6 @@
 from django.apps import AppConfig
 
 
-class AdsappConfig(AppConfig):
+class PagesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'adsApp'
-    verbose_name = 'ADS Web'
+    name = 'pages'

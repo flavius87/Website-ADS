@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{page.title}} {% endblock %}
+
+{% block content %}
+     
+<div class="card-body">
+    <h2 class="card-title">{{page.title}}</h2>
+    <p>{{page.content|safe}}</p>
+</div>
+
+{% endblock %}

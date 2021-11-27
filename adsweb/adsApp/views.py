@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import ContactForm
 
 # Create your views here.
 
@@ -28,24 +29,30 @@ def where(request):
 
 def constructions(request):
 
-    return render(request, 'obras.html', {
+    return render(request, 'constructions.html', {
         'title': 'Obras'
     })
 
 def inProgress(request):
 
-    return render(request, 'obras/inprogress.html', {
+    return render(request, 'constructions/inprogress.html', {
         'title': 'Obras en proceso'
     })
 
 def concluded(request):
 
-    return render(request, 'obras/concluded.html', {
+    return render(request, 'constructions/concluded.html', {
         'title': 'Obras entregadas'
+    })
+
+def services(request):
+
+    return render(request, 'services.html', {
+        'title': 'Servicios'
     })
 
 def contact(request):
 
-    return render(request, 'contact.html', {
-        'title': 'Contacto'
+    return render(request, 'contact.html',{
+        'title': 'Contactanos!'
     })
