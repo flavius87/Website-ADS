@@ -1,61 +1,59 @@
 {% extends 'layout.html' %}
+{% load widget_tweaks %}
 
 {% block title %} Contacto {% endblock %}
+
 
 {% block content %}
      
 <div class="card-body">
-    <h2 class="card-title">{{title}}</h2>
-        <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-4">
+    <h2 class="card-title">Contactanos!</h2>
+    <br>
+        <form class="row g-3 needs-validation" novalidate method="POST">
+            {% csrf_token %}
+         
+            <div class="col-md-3">
                 <label for="contactFormControlInput" class="form-label">Nombre: </label>
-                <input type="text" class="form-control" id="inputName" placeholder="nombre" required>
+                {% render_field form.name %}
+            
             </div>
             <br>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="contactFormControlInput" class="form-label">Apellido: </label>
-                <input type="text" class="form-control" id="inputLastName" placeholder="apellido" required>
+                {% render_field form.last_name %}
+            </div>
+            <br>
+            <div class="col-md-3">
+                <label for="contactFormControlInput" class="form-label">Celular: </label>
+                {% render_field form.phono %}
             </div>
             <br>
             <div class="col-md-4">
-                <label for="contactFormControlInput" class="form-label">Celular: </label>
-                <input type="email" class="form-control" id="inputPhone" placeholder="+54 9">
-            </div>
-            <br>
-            <div class="col-md-6">
                 <label for="contactFormControlInput" class="form-label">Email: </label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="tuemail@email.com" required>
+                {% render_field form.email %}
             </div>
             <br>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <label for="contactFormControlInput" class="form-label">Ciudad:</label>
-                <input type="text" class="form-control" id="inputCity" placeholder="ingresá tu ciudad" required>
+                {% render_field form.city  %}
             </div>
             <br>
-            <div class="col-md-7">
+            <div class="col-md-4">
                 <label for="contactFormControlInput" class="form-label">Asunto: </label>
-                <input type="text" class="form-control" id="contactFormControlInput" placeholder="asunto">
+                {% render_field form.subject  %}
             </div>
-            <br>
-                <input accept=".jpg,.png,.jpeg,.pdf" class="hidden" name="adjunto" type="file" id="adjunto">
-            <br>
             <br>
             <div class="col-md-5">	
                 <label for="contactFormControlInput" class="form-label">Dejanos tu consulta: </label>
-                <textarea class="form-control" id="contactFormControlInput" rows="4"></textarea>
-            </div>
-            <div class="col-md-8">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                Recibir novedades
-                </label>
+                {% render_field form.description rows="4"  %}
             </div>
             <br>
             <br>
+            
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
+            {{form.errors}}
         </form>
 </div>
-
 {% endblock %}

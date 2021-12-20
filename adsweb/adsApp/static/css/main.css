@@ -5,11 +5,14 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
 }
 
 
 /*===================MENU==========================*/
+
+img, svg {
+    margin-right: 10;
+}
 
  #menu a, button{
      font-size: 18px !important;
@@ -35,11 +38,15 @@ body {
 #iconos  i {
     font-size: 26px;
     padding: 0 8px;
-    color:#f3f3f3;
+    color:#000000;
 }
 
 #iconos :hover{
     cursor: pointer;
+}
+
+.bi-facebook{
+    min-width: 840px;
 }
 
 .bi-facebook:hover{
@@ -58,6 +65,10 @@ body {
     color: #EA4335 !important;
 }
 
+.bi-geo-alt-fill:hover{
+    color: #EA4335 !important;
+}
+
 /*===================SLIDER DE IMAGENES==========================*/
 
 .carousel-inner {
@@ -67,6 +78,8 @@ body {
 /*===================FOOTER==========================*/
 
 .card-footer {
+    position: relative;
+    display: inline-block;
     width: auto !important;
     background-color: #212529;
     border: 1px;
@@ -74,6 +87,6 @@ body {
     margin: 0 auto !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
-    text-align: center;
 
 }
+

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../static/css/whatsapp.css">
 
     <!-- Logo -->
-    <link rel="shortcut icon" type="image/x-icon" href="../static/images/logo-ads-alta.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/logo-ads-alta-i.ico">
     <title>ADS - {% block title %} {% endblock %}</title>
 
     <!-- Bootstrap -->
@@ -22,74 +22,66 @@
   </head>
   <body>
 
-    <!----- Header ----->
-
-    <header class="container-fluid bg-dark bg-gradient d-flex justify-content-center">
-        <div id="iconos" >
-            <a href="https://www.facebook.com/ADSconstruccionpampeana" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/adsconstruccion/" target="_blank"><i class="bi bi-instagram"></i></a>  
-            <a href="https://api.whatsapp.com/send?phone=5492213146395&text=Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20modelo%20de%20construcci%C3%B3n%20de%20ADS" target="_blank"><i class="bi bi-whatsapp"></i></a>
-            <a href="mailto:ads.construccionpampeana@gmail.com?Subject=Me%interesa%saber%más%para%construir"><i class="bi bi-envelope"></i></a>
-        </div>
-    </header>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient" id="menu">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'index' %}">
-            <span class="text-dark fs-4 fw-bold"> 
-              <img src="../static/images/logo-ads-alta.png" alt="logo-ads" width="115" height="75">ADS Construcción en seco
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="{% url 'sobre_nosotros' %}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Sobre Nosotros
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  {% for page in pages %}
-                    {% if page.3 == True %}
-                      <li><a class="dropdown-item" href="{% url 'page' page.2 %}">{{page.1}}</a></li>
-                    {% endif %}
-                  {% endfor %}
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="{% url 'obras' %}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Obras
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  {% for page in pages %}
-                    {% if page.4 == True %}
-                  <li><a class="dropdown-item" href="{% url 'page' page.2 %}">{{page.1}}</a></li>
-                    {% endif %}
-                  {% endfor %}
-                </ul>
-              </li>
-                  {% for page in pages %}
-                    {% if page.3 == False and page.4 == False %}
-              <li class="nav-item">
-                  <a class="nav-link" href="{% url 'page' page.2 %}">{{page.1}}</a> 
-              </li>
-                    {% endif %}
-                  {% endfor %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
-              </li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient sticky-top" id="menu">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">
+        <span class="text-dark fs-4 fw-bold m-1">
+          <img src="../static/images/logo-ads-alta.png" alt="logo-ads" width="115" height="75">ADS Construcción en seco
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto mb-4 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Sobre Nosotros
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="#about">
+              {% for page in pages %}
+              {% if page.3 == True %}
+              <li><a class="dropdown-item" href="{% url 'page' page.2 %}">{{page.1}}</a></li>
+              {% endif %}
+              {% endfor %}
             </ul>
-          </div>
-        </div>
-      </nav>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Obras
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              {% for page in pages %}
+              {% if page.4 == True %}
+              <li><a class="dropdown-item" href="{% url 'page' page.2 %}">{{page.1}}</a></li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </li>
+          {% for page in pages %}
+          {% if page.3 == False and page.4 == False %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'page' page.2 %}">{{page.1}}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
      <!----- Content ----->
      <div id="content">
         {% block content %}
              <!----- Intro ----->
 
-              <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-60 m-auto" id="intro">
+              <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w- m-auto" id="intro">
                 <h1 class="p-3 fs-2 border-top border-3">Realizamos construcción en seco, somos especialistas en<span class="text-primary"> Wood Frame<span/></h1>
                 <p class="p-3  fs-4">
                     En <span class="text-primary">ADS</span> hacemos realidad tu vivienda, desde los cimientos hasta el último detalle. <span class="text-primary">Entregamos llave en mano</span>, 
@@ -102,23 +94,38 @@
                 </p>
               </section>
 
-            <!----- Obras ----->
+        
+            <!----- Card group ----->
 
-            <div id="constructions">
+           
               
-            </div>
-
-            <!----- Servicios ----->
-
-            <div id="services">
               
-            </div>
-            
-            <!----- Sobre nosotros ----->
+              <div class="container">
+                <div class="row justify-content-center">
+                  
+                    {% for page in pages %}
+                        <div class="col">
+                          <div class="card h-100">
+                            
+                            <img class="card-img-top" src="{{page.6}}" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">{{page.1}}</h4>
+                              <p class="card-text">{{page.5|safe|truncatechars:150}}</p>
+                              <a href="{% url 'page' page.2 %}" class="btn btn-primary">Leer más &rarr;</a>
+                            </div>    
+                          </div>
+                        </div>
+                    {% endfor %} 
+                  
+                </div>
+              </div>
+              
+             
+             
+              
+           
 
-            <div id="about">
-            
-            </div>
+          
         {% endblock %}
     </div>
     
@@ -136,5 +143,41 @@
   </body>
 
   <br>
-  <div class="card-footer bg-dark bg-gradient d-flex"> &copy; ADS - {% now "Y" %} | Desarrollado por flavius </div>
-</html>
+  <footer>
+    <div class="container">
+      <div class="shadow p-3 mb-5 bg-white rounded">
+        <div class="row">
+          <div class="col-xs-12 col-md-6 text-left">
+            <h5>Direcciones</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="link-secondary" href="https://goo.gl/maps/ApKJphtjHedc52SA6" target="_blank"><i
+                    class="bi bi-geo-alt-fill"></i> Montes de Oca 455, 8206 General San Martín, La Pampa</a></li>
+              <li><a class="link-secondary" href="https://goo.gl/maps/vDnGQJNJBKUphjqPA" target="_blank"><i
+                    class="bi bi-geo-alt-fill"></i> 476 N°5425, 1902 City Bell, La Plata, Buenos Aires</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-xs-12 col-md-6 text-right">
+            <h6 class="text-muted lead">Comunicate con nosotros</h6>
+            <div id="iconos" class="">
+              <a href="https://www.facebook.com/ADSconstruccionpampeana" target="_blank"><i
+                  class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/adsconstruccion/" target="_blank"><i class="bi bi-instagram"></i></a>
+              <a href="https://api.whatsapp.com/send?phone=5492213146395&text=Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20modelo%20de%20construcci%C3%B3n%20de%20ADS"
+                target="_blank"><i class="bi bi-whatsapp"></i></a>
+              <a href="mailto:ads.construccionpampeana@gmail.com?Subject=Me%interesa%saber%más%para%construir"><i
+                  class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+  
+          <div class="col-md-12 text-right">
+            <p class="text-muted small">&copy; ADS - {% now "Y" %} | Desarrollado por <a href="https://github.com/flavius87" target="_blank">flavius</a></p>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </footer>
+  

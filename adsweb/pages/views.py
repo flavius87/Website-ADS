@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from .models import Article
 from .models import Page
 
 # Create your views here.
@@ -11,3 +13,11 @@ def page(request, slug):
         "title": "Página",
         "page": page
     })
+
+def article(request):
+
+   # Sacar artículos
+    article = Article.objects.get().all()
+
+    return render(request,
+    {'article':article})
