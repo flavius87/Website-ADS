@@ -15,3 +15,4 @@ def get_articles(request):
     return {
         'articles': articles
     }
+

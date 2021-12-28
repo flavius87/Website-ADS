@@ -14,3 +14,7 @@ class Contact (models.Model):
        verbose_name = "Contacto"
        verbose_name_plural = "Contactos"
 
+class Slider(models.Model):
+    image = models.ImageField(verbose_name="Imagen", upload_to='slider')
+    name = models.CharField(max_length=200, verbose_name="Nombre de la imagen")
+    order = models.IntegerField(default=0, verbose_name="Orden de la imagen")

@@ -44,4 +44,20 @@ class Article (models.Model):
 
         return f"{self.title} creado el {self.created_at} {public}"
 
+class Gallery(models.Model):
+    title = models.CharField(max_length=60, verbose_name="Título")
+    description = RichTextField(default='null', verbose_name="Descripción")
+    image = models.ImageField(default='null', verbose_name='Imagen', upload_to='images')
+
+    def __str__(self):
+        return self.title
+
+class GalleryImages(models.Model):
+    gallery = models.ForeignKey(Gallery, default=None, on_delete=models.CASCADE)
+    image = models.ImageField(default='null', verbose_name='Imagen', upload_to='images')
+
+    def __str__(self):
+        return self.gallery.title
+
+
 

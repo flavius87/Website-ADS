@@ -3,6 +3,7 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Contact)
+admin.site.register(Slider)
 
 # Configurar el título del panel
 title = "ADS - Construcción en seco"

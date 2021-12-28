@@ -9,6 +9,22 @@ class ArticleAdmin(admin.ModelAdmin):
 
 admin.site.register(Article, ArticleAdmin)
 
+
+# Gallery
+class GalleryImagesAdmin(admin.StackedInline):
+    model=GalleryImages
+
+@admin.register(Gallery)
+class GalleryAdmin(admin.ModelAdmin):
+    inlines = [GalleryImagesAdmin]
+
+    class Meta:
+        model=Gallery
+
+@admin.register(GalleryImages)
+class GalleryImagesAdmin(admin.ModelAdmin):
+    pass
+
 # Configurar el título del panel
 title = "ADS - Construcción en seco"
 subtitle = "Panel de gestión"

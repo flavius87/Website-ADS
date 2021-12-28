@@ -1,14 +1,17 @@
 from django.shortcuts import redirect, render
 
 from .forms import ContactForm
+from adsApp.models import Slider
 
 # Create your views here.
 
 def index(request):
 
-    return render(request, 'index.html', {
-        'title': 'Inicio'
-    })
+    slider = Slider.objects.all().order_by('order')
+    context  = {
+        'slider' : slider
+    }
+    return render(request, 'index.html', context)
 
 def contact(request):
 

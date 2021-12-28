@@ -21,3 +21,4 @@ def article(request):
 
     return render(request,
     {'article':article})
+
