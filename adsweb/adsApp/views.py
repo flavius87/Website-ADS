@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 
 from .forms import ContactForm
@@ -14,15 +15,15 @@ def index(request):
     return render(request, 'index.html', context)
 
 def contact(request):
-
-    form = ContactForm(request.POST or None)
     if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-            return redirect('inicio')
+        details = ContactForm(request.POST)
+        
+        if details.is_valid():
+            details.save(commit = False)
+            return HttpResponse("Formulario enviado correctamente")
         else:
-            return render(request, 'invalid-form.html', {
-        'title': 'Formulario invalido'
-    })
+            return render(request, 'contact.html', {'form':details})
    
-    return render(request, 'contact.html', {'form':form})
+    else:
+        form = ContactForm(None)
+        return render(request, 'contact.html', {'form':form})

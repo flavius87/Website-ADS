@@ -9,13 +9,11 @@
 <div class="card-body">
     <h2 class="card-title">Contactanos!</h2>
     <br>
-        <form class="row g-3 needs-validation" novalidate method="POST">
+        <form id="contactForm" class="row g-3 needs-validation" novalidate method="POST">
             {% csrf_token %}
-         
             <div class="col-md-3">
-                <label for="contactFormControlInput" class="form-label">Nombre: </label>
+                <label for="contactFormControlInput" class="form-label" name="inputName">Nombre: </label>
                 {% render_field form.name %}
-            
             </div>
             <br>
             <div class="col-md-3">
@@ -56,4 +54,5 @@
             {{form.errors}}
         </form>
 </div>
+
 {% endblock %}

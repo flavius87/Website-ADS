@@ -64,6 +64,25 @@ class ContactForm(forms.ModelForm):
             ),
         }
         
+ # this function will be used for the validation
+    def clean(self):
+ 
+        # data from the form is fetched using super function
+        super(ContactForm, self).clean()
+         
+        # extract the name and lastname field from the data
+        name = self.cleaned_data.get('name')
+        last_name = self.cleaned_data.get('last_name')
+ 
+        # conditions to be met for the username length
+        if len(name) < 3:
+            self._errors['name'] = self.error_class([
+                'El nombre no puede tener menos de tres caracteres'])
         
-    
+        if len(last_name) <3:
+            self._errors['last_name'] = self.error_class([
+                'El apellido no puede tener menos de tres caracteres'])
+ 
+        # return any errors if found
+        return self.cleaned_data
     
