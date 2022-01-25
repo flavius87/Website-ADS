@@ -16,7 +16,7 @@
   <div class="carousel-inner">
     {% for object in slider %}
     <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}" data-bs-inter="5000">
-      <img src="{{object.image.url}}" class="d-block w-100" alt="sliderImg">
+      <img src="{{object.image.url|default_if_none:'#'}}" class="d-block w-100" alt="sliderImg">
     </div>
     {% endfor %}
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -33,5 +33,6 @@
 </div>
 
     {{ block.super }}
-       
+
+    
 {% endblock %}

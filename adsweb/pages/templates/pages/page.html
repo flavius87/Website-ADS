@@ -4,14 +4,30 @@
 
 {% block content %}
 
-<div class="card mb-3">
+<div class="container mb-5">
     <div class="card-body">
-        <h2 class="card-title">{{page.title}}</h2>
-        <p class="card-text">{{page.content|safe}}</p>
-        {% if page.image != 'null' and page.image.url|length >= 1 %}
-        <img src="{{page.image.url}}" class="card-img-top d-block w-50" alt="PageImg">
-        {% endif %}
-    </div>
+        <div class="row">
+            <h2 class="card-title">{{page.title}}</h2>
+            <hr class="my-4">
+            <div class="col-12 col-md-8">
+                <p class="card-text">{{page.content|safe}}</p>
+            </div>
+            <!----- Asside -----> 
+                <div class="col-12 col-md-4">
+                    {% for asside in assides %}
+                    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">{{asside.1}} </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{asside.2}}</h5>
+                                <p class="card-text">{{asside.3|safe}}</p>
+                        </div>
+                    </div>  
+                    {% endfor %}
+                </div>
+        </div> 
+    </div>               
 </div>
 
+
+        
 {% endblock %}

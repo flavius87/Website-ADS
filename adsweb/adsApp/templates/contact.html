@@ -1,58 +1,42 @@
 {% extends 'layout.html' %}
 {% load widget_tweaks %}
 
+
 {% block title %} Contacto {% endblock %}
 
+{% if messages %}
+    {% for message in messages %}
+        <div class="message">
+            {{message}}
+        </div>
+    {% endfor %}
+{% endif %}
 
 {% block content %}
-     
-<div class="card-body">
-    <h2 class="card-title">Contactanos!</h2>
-    <br>
-        <form id="contactForm" class="row g-3 needs-validation" novalidate method="POST">
-            {% csrf_token %}
-            <div class="col-md-3">
-                <label for="contactFormControlInput" class="form-label" name="inputName">Nombre: </label>
-                {% render_field form.name %}
+<div class="container mb-5">
+    <div class="card-body">
+        <div class="row">
+            <h2 class="card-title">¡Contactanos!</h2>  
+            <hr class="my-4">
+            <div class="col-12 col-md-9">
+                    <div class="form-fluid">
+                        <form class="form-group" novalidate method="POST">
+                            {% csrf_token %}
+
+                            {% render_field form %}
+
+                            <br>
+                            <br>
+                            
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </div>
+                            
+                        </form>
+                    </div>
             </div>
-            <br>
-            <div class="col-md-3">
-                <label for="contactFormControlInput" class="form-label">Apellido: </label>
-                {% render_field form.last_name %}
-            </div>
-            <br>
-            <div class="col-md-3">
-                <label for="contactFormControlInput" class="form-label">Celular: </label>
-                {% render_field form.phono %}
-            </div>
-            <br>
-            <div class="col-md-4">
-                <label for="contactFormControlInput" class="form-label">Email: </label>
-                {% render_field form.email %}
-            </div>
-            <br>
-            <div class="col-md-5">
-                <label for="contactFormControlInput" class="form-label">Ciudad:</label>
-                {% render_field form.city  %}
-            </div>
-            <br>
-            <div class="col-md-4">
-                <label for="contactFormControlInput" class="form-label">Asunto: </label>
-                {% render_field form.subject  %}
-            </div>
-            <br>
-            <div class="col-md-5">	
-                <label for="contactFormControlInput" class="form-label">Dejanos tu consulta: </label>
-                {% render_field form.description rows="4"  %}
-            </div>
-            <br>
-            <br>
-            
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
-            {{form.errors}}
-        </form>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

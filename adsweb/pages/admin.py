@@ -3,9 +3,11 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Page)
+admin.site.register(Asside)
+admin.site.register(Video)
 class ArticleAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', 'updated_at')
-    list_display = ('title', 'page', 'public')
+    list_display = ('title', 'public')
 
 admin.site.register(Article, ArticleAdmin)
 
