@@ -1,13 +1,16 @@
+from django.core import validators
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
+from django.core.validators import MinLengthValidator, RegexValidator
 
 class Contact (models.Model):
-    name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    phono = models.IntegerField(default=0)
-    email = models.EmailField(max_length=50)
-    city = models.TextField(max_length=100)
-    subject = models.CharField(max_length=100)
-    description = models.TextField(max_length=400)
+    name = models.CharField(max_length=50, validators=[MinLengthValidator(3)], verbose_name="Nombre")
+    last_name = models.CharField(max_length=50, validators=[MinLengthValidator(3)], verbose_name="Apellido")
+    phone = PhoneNumberField(blank=True, default="", verbose_name="Teléfono")
+    email = models.EmailField(max_length=50, verbose_name="Email")
+    city = models.TextField(max_length=150, validators=[RegexValidator('^[A-Za-z-ñ ]*$', 'El campo ciudad no puede contener números o caracteres especiales')], verbose_name="Ciudad")
+    subject = models.CharField(max_length=100, validators=[RegexValidator('^[A-Za-z-ñ ]*$', 'El asunto no puede contener números o caracteres especiales')], verbose_name="Asunto")
+    description = models.TextField(max_length=400, verbose_name="Tu consulta")
     
 
     class Meta:

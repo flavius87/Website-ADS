@@ -7,6 +7,9 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+a:link, a:visited, a:active {
+    text-decoration:none !important;
+}
 
 /*===================MENU==========================*/
 
@@ -33,6 +36,50 @@ img, svg {
      color: white !important;
      background-color: #3f3f3f !important;
  }
+
+/*=========================SEPARADOR INTRO================================*/
+
+ #viviendalista {
+     background-color: #212529 !important;
+     width: 100% !important;
+     min-height: 100px !important;
+     position: relative !important;
+ }
+
+ #viviendalista:hover {
+    background-color: #985321 !important;
+  }
+
+#textoviviendalista {
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+#textoviviendalista:hover {
+    transform:scaleX(1.5) !important;
+}
+
+#containerviviendalista {
+    overflow: hidden;
+}
+
+ /*=========================PEDI PRESUPUESTO================================*/
+ 
+ #presupuesto {
+    background-color: #212529 !important;
+    width: 100% !important;
+    min-height: 100px !important;
+    margin: auto;
+    position: static;
+ }
+ 
+ #presupuesto:hover{
+     background-color: #25D366 !important;
+     cursor: pointer;
+     border: 5px solid #f7f7f7;
+ }
+
+
 /*=========================SOCIAL================================*/
 
 #iconos  i {
@@ -75,6 +122,35 @@ img, svg {
     max-height:39rem !important;
 }
 
+/*===================FORM==========================*/
+.errorlist {
+    color: red !important;
+    font-weight:bold !important;
+}
+
+.message{
+    padding: 20px;
+    background: #1f7e58;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/*===================IMAGENES==========================*/
+
+#multi {
+    object-fit: cover !important;
+    width: 100%;
+    height: 350px !important;
+   }
+
+#galeria .col-md-4 {
+    margin: 0 !important;
+    padding: 10px;
+}
+#galeria img:hover {
+    border: 5px solid #f7f7f7;
+}
 
 /*===================FOOTER==========================*/
 
@@ -90,4 +166,3 @@ img, svg {
     padding-bottom: 10px !important;
 
 }
-
