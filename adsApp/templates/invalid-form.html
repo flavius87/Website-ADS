@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+     
+<div class="card-body">
+    <h2 class="card-title">{{title}}</h2>
+    <p>Regrese a la sección <span class="text-primary"><a href="{% url 'contacto' %}">Contacto</a></span> y complete los campos obligatorios.</p>
+</div>
+
+{% endblock %}
