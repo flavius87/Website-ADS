@@ -1,0 +1,19 @@
+
+{% for article in articles %}
+<div class="article-item">
+    {% if article.image != 'null' and article.image.url|length >= 1 %}
+    <div class="image">
+        <img src="{{article.image.url}}" />
+    </div>
+    {% endif %}
+
+    <div class="text">
+        <h3>{{article.title}}</h3>
+
+        <p>
+            {{article}}
+        </p>
+    </div>
+</div>
+
+{% endfor %}
