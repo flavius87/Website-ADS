@@ -35,7 +35,7 @@ def contact(request):
             message = "\n".join(map(str, body.values()))
     
             try:
-                send_mail(subject, message, 'admin@example.com', ['admin@example.com']) 
+                send_mail(subject, message, 'ads.construccionpampeana@gmail.com', ['ads.construccionpampena@gmail.com']) 
             except BadHeaderError:
                 return render(request, 'invalid-form.html')
             return render(request, 'valid-form.html')
