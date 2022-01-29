@@ -6,5 +6,6 @@
         "": true
     },
     "git.allowForcePush": true,
-    "git.allowNoVerifyCommit": true
+    "git.allowNoVerifyCommit": true,
+    "gitlens.fileAnnotations.command": "changes"
 }
