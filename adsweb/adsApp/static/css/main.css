@@ -43,21 +43,15 @@ img, svg {
      background-color: #212529 !important;
      width: 100% !important;
      min-height: 100px !important;
-     position: relative !important;
+     margin: auto;
+     position: static;
  }
 
  #viviendalista:hover {
     background-color: #985321 !important;
+    cursor: pointer;
+    border: 5px solid #f7f7f7;
   }
-
-#textoviviendalista {
-    transition-property: all;
-    transition-duration: 1s;
-}
-
-#textoviviendalista:hover {
-    transform:scaleX(1.5) !important;
-}
 
 #containerviviendalista {
     overflow: hidden;
