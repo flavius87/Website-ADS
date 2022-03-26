@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %} Trabaja con nosotros {% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container mb-5">
+    <div class="card-body">
+        <div class="row">
+            <h2 class="card-title">Trabaja con nosotros</h2>
+            <hr class="my-4">
+            <div class="col-12 col-md-8">
+                <img src="{% static 'images/trabaja-con-nosotros.png' %}" alt="trabaja-con-nosotros">
+                <p class="card-text">¿Tenés experiencia en construcción? ¿Trabajaste en carpintería? ¿Te interesa aprender un oficio?<br>
+                    <br>
+                    Si vivís en La Plata y estás buscando trabajo en el sector, en ADS nos gustaría conocerte. <br>
+                    <br>
+                    Envianos tu currículum, contanos qué sabés o por qué te interesa trabajar en construcción en seco y te estaremos contactando cuando tengamos una vacante que se ajuste a tu perfil y expectativas.</p>
+                    <a href="mailto:ads.construccionpampeana@gmail.com?Subject=Quiero%20trabajar%20en%20ADS" class="btn btn-primary">Enviar currículum</a>
+            </div>
+                    
+            <!----- Asside -----> 
+                <div class="col-12 col-md-4">
+                    {% for asside in assides %}
+                    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">{{asside.1}} </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{asside.2}}</h5>
+                                <p class="card-text">{{asside.3|safe}}</p>
+                        </div>
+                    </div>  
+                    {% endfor %}
+                </div>
+        </div> 
+    </div>               
+</div>
+
+        
+{% endblock %}

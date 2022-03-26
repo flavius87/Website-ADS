@@ -46,3 +46,6 @@ def contact(request):
         return render(request, 'contact.html', {'form':form})
 
 
+def work(request):
+
+    return render(request, 'work-us.html')
