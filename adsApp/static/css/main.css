@@ -146,6 +146,12 @@ img, svg {
     border: 5px solid #f7f7f7;
 }
 
+/*===================TEXTOBODY==========================*/
+
+#texto-justificado{
+    text-align: justify !important;
+    }
+
 /*===================FOOTER==========================*/
 
 .card-footer {
