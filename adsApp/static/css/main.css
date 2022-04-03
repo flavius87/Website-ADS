@@ -20,7 +20,6 @@ img, svg {
  #menu a, button{
      font-size: 18px !important;
      font-weight: 600;
-    
  }
 
  #menu a{
@@ -166,3 +165,96 @@ img, svg {
     padding-bottom: 10px !important;
 
 }
+
+@media screen and (min-width:1300px){
+
+    #container{
+        width:auto;
+        height: 200vh;
+        }  
+ 
+    #menu a, button{
+        font-size: 18px !important;
+        font-weight: 600;
+    }
+
+    #ads{
+        font-size: 22px !important;
+        font-weight: 700;
+    }
+    #nav-sticky {
+        background: #fff;
+        height: 100px;
+        z-index: 999999;
+        margin: 2 auto;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        }
+}
+
+@media screen and (max-width:1290px){
+   
+    #container{
+    width:auto;
+    height: 200vh;
+    } 
+
+    #menu a, button{
+        font-size: 14px !important;
+        font-weight: 600;
+    }
+
+    #ads{
+        font-size: 18px !important;
+        font-weight: 600;
+    }
+
+    #nav-sticky {
+        background: #fff;
+        height: 100px;
+        z-index: 999999;
+        margin: 2 auto;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        }
+    
+    .carousel{
+        margin-top: auto !important;
+    }
+}
+
+@media screen and (max-width:990px){
+    
+    #container{
+        width:auto;
+        height: 200vh;
+        } 
+    
+        #menu a, button{
+            font-size: 14px !important;
+            font-weight: 600;
+        }
+    
+        #ads{
+            font-size: 18px !important;
+            font-weight: 600;
+        }
+    
+        #nav-sticky {
+            background: #fff;
+            height: auto;
+            margin: 2 auto;
+            width: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            }
+        
+    }

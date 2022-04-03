@@ -37,8 +37,8 @@
   </head>
   <body>
 <div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient sticky-top" id="menu">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-sticky">
+    <div class="container" id="menu">
         <a class="navbar-brand" href="{% url 'index' %}">
           <span class="text-dark fs-4 fw-bold mr-auto d-block">
             <img src="{% static 'images/logo-ads-alta.png' %}" alt="logo-ads" width="115" height="75">
@@ -50,7 +50,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <a class="navbar-brand" href="{% url 'index' %}">
-            <span class="text-dark fs-4 fw-bold mr-auto d-block">
+            <span class="text-dark fs-4 fw-bold mr-auto d-block" id="ads">
             ADS Construcción en seco
             </span>
           </a>
@@ -209,7 +209,7 @@
      <a href="https://api.whatsapp.com/send?phone=5492213146395&text=Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20modelo%20de%20construcci%C3%B3n%20de%20ADS" class="float" target="_blank">
       <i class="fa fa-whatsapp my-float"></i>
      </a>
-       
+  
   </body>
 
   <!----- Footer ----->
