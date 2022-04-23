@@ -109,6 +109,10 @@ img, svg {
     color: #EA4335 !important;
 }
 
+.bi-geo-alt-fill:hover{
+    color: #212529!important;
+}
+
 /*===================SLIDER DE IMAGENES==========================*/
 
 .carousel-inner {
@@ -151,6 +155,39 @@ img, svg {
     text-align: justify !important;
     }
 
+.text-brown{
+    color: #985321!important;
+} 
+
+.btn-primary{
+    background-color: #985321!important;
+    border-color: #985321!important;
+}
+
+.btn-primary:hover{
+    background-color: #5a3114!important;
+}
+
+
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: #fff;
+    background-color: #633718!important;
+    border-color: #633718!important;
+    box-shadow: 0 0 0 0.25rem rgba(253, 158, 49, 0.5)!important;
+}
+
+.card-title{
+    color: #985321!important;
+}
+
+.card-title:hover{
+    color: #5a3114!important;
+}
+
+.title-brown{
+    color: #985321!important;
+}
+
 /*===================FOOTER==========================*/
 
 .card-footer {
@@ -165,6 +202,7 @@ img, svg {
     padding-bottom: 10px !important;
 
 }
+
 
 @media screen and (min-width:1300px){
 

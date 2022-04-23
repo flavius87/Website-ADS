@@ -106,11 +106,11 @@
              <!----- Intro ----->
             <div class="container">
               <section class="d-flex flex-column w-auto m-auto" id="intro">
-                <h1 class="p-3 fs-2 border-top border-3 justify-content-center align-items-center pt-5  text-center">Construcción en seco, viviendas y ampliaciones en<span class="text-primary"> Wood Frame</span></h1>
+                <h1 class="p-3 fs-2 border-top border-3 justify-content-center align-items-center pt-5  text-center">Construcción en seco, viviendas y ampliaciones en<span class="text-brown"> Wood Frame</span></h1>
                 <p class="p-3  fs-4" id="texto-justificado">
-                    En <span class="text-primary">ADS</span> brindamos un servicio integral de construcción para que tu mayor responsabilidad sea organizar la mudanza a tu nueva casa. <span class="text-primary">Entregamos llave en mano</span>, 
+                    En <span class="text-brown">ADS</span> brindamos un servicio integral de construcción para que tu mayor responsabilidad sea organizar la mudanza a tu nueva casa. <span class="text-brown">Entregamos llave en mano</span>, 
                     con todas las instalaciones y servicios funcionando. 
-                    Trabajamos de acuerdo a tus necesidades, ofreciendo una <span class="text-primary">construcción rápida, eficiente y resistente</span>. 
+                    Trabajamos de acuerdo a tus necesidades, ofreciendo una <span class="text-brown">construcción rápida, eficiente y resistente</span>. 
                     <br>Llevamos adelante proyectos de gran calidad, eligiendo los mejores materiales, con especial cuidado de los detalles y terminaciones.
                     Si estás pensando en construir, te invitamos a que nos conozcas mejor para que puedas recibir el asesoramiento adecuado. 
                     En ADS te espera un equipo profesional, compuesto por personas sencillas y cordiales, que trabajan con seriedad.
@@ -146,11 +146,11 @@
                     {% for video in videos %}
                     <div class="col">
                       <div class="card-body">
-                        <video width="100%" height="350" controls autoplay>
+                        <video width="100%" height="350" controls>
                           <source src="/media/{{video.1}}" type="video/mp4"/>
                         </video>
                         <a href="https://api.whatsapp.com/send?phone=5492213146395&text=Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20modelo%20de%20construcci%C3%B3n%20de%20ADS" target="_blank">
-                        <h4 class="card-title text-center text-uppercase text-white pt-3" id="presupuesto">{{video.0}}</h4>
+                        <h4 class="text-center text-uppercase text-white pt-3" id="presupuesto">{{video.0}}</h4>
                         </a>
                       </div>
                     </div>
@@ -163,7 +163,7 @@
               <section id="galeria" class="container">
                 {% for gallery in galleries %} 
                 <div class="text-center pt-4">
-                <h4 class="card-title text-uppercase pt-4">{{gallery.1}}</h4>
+                <h4 class="title-brown text-uppercase pt-4">{{gallery.1}}</h4>
                 </div>
                 <div class="row">
                   <div class="col-12 col-md-4 col-sm-8">
@@ -186,14 +186,14 @@
                   {% for article in articles %}
                     {%if article.0 == 1 %}
                         <div class="col-12 col-md-6 pt-3 text-center">
-                          <h3 class="card-title">{{article.1}}</h3>
+                          <h3 class="title-brown">{{article.1}}</h3>
                           <img src="/media/{{article.3|default_if_none:'#'}}" class="img-fluid img-thumbnail" alt="image article">                     
                           <p class="card-text">{{article.2|safe}}</p>
                         </div>
                     {% endif %}
                     {%if article.0 == 2 %}
                   <div class="col-12 col-md-6 pt-3 text-center" id="lateral">
-                    <h3 class="card-title">{{article.1}}</h3>
+                    <h3 class="title-brown">{{article.1}}</h3>
                           <img src="/media/{{article.3|default_if_none:'#'}}" class="img-fluid img-thumbnail" alt="image article">                     
                           <p class="card-text">{{article.2|safe}}</p>
                     </div>
