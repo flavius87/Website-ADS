@@ -9,8 +9,6 @@ __pycache__/
 local_settings.py
 db.sqlite3
 adsweb/db.sqlite3
-adsweb/settings/local.py
-adsweb/settings/production.py
 db.sqlite3-journal
 media
 Procfile
