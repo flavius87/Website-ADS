@@ -13,17 +13,13 @@ a:link, a:visited, a:active {
 
 /*===================MENU==========================*/
 
-img, svg {
-    margin-right: 10;
-}
-
  #menu a, button{
      font-size: 18px !important;
-     font-weight: 600;
+     font-weight: 600 !important;
  }
 
  #menu a{
-     color:#3f3f3f;
+     color:#252525;
      
  }
 
@@ -116,7 +112,7 @@ img, svg {
 /*===================SLIDER DE IMAGENES==========================*/
 
 .carousel-inner {
-    max-height:39rem !important;
+    max-height:55rem !important;
 }
 
 /*===================FORM==========================*/
@@ -146,6 +142,36 @@ img, svg {
     padding: 10px;
 }
 #galeria img:hover {
+    border: 5px solid #f7f7f7;
+}
+
+#gea {
+    margin: auto;
+    position: static;
+}
+
+#gea__title:hover {
+    cursor: pointer;
+    color: #fff !important;    
+}
+
+#gea:hover {
+   background-color:  hsl(172, 58%, 39%) !important;
+   border: 5px solid #f7f7f7;
+   color: #fff !important;
+ }
+
+#containergea {
+   overflow: hidden;
+}
+
+#containergea img {
+    object-fit: cover !important;
+    width: 100%;
+    height: 350px !important;
+}
+
+#containergea img:hover{
     border: 5px solid #f7f7f7;
 }
 
@@ -217,8 +243,8 @@ img, svg {
     }
 
     #ads{
-        font-size: 22px !important;
-        font-weight: 700;
+        font-size: 26px !important;
+        font-weight: 700 !important;
     }
     #nav-sticky {
         background: #fff;
@@ -241,13 +267,15 @@ img, svg {
     } 
 
     #menu a, button{
-        font-size: 14px !important;
+        font-size: 18px !important;
         font-weight: 600;
     }
 
     #ads{
-        font-size: 18px !important;
-        font-weight: 600;
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        margin-top: 10px;
+        margin-bottom: -15px;
     }
 
     #nav-sticky {
@@ -280,8 +308,10 @@ img, svg {
         }
     
         #ads{
-            font-size: 18px !important;
-            font-weight: 600;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            margin-top: 10px;
+            margin-bottom: -15px;
         }
     
         #nav-sticky {

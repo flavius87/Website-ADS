@@ -40,22 +40,22 @@
 
 <body>
   <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container" id="menu">
+    <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #fff;">
+      <div class="container-fluid" id="menu">
         <a class="navbar-brand" href="{% url 'index' %}">
-          <span class="text-dark fs-4 fw-bold mr-auto d-block">
+          <span class="text-dark fs-4 fw-bold d-block">
             <img src="{% static 'images/logo-ads-alta.png' %}" alt="logo-ads" width="115" height="75">
           </span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" 
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <a class="navbar-brand" href="{% url 'index' %}">
-            <span class="text-dark fs-4 fw-bold mr-auto d-block" id="ads">
+            <h1 class="text-dark fw-bold" id="ads">
               ADS Construcción en seco
-            </span>
+            </h1>
           </a>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">
@@ -99,8 +99,8 @@
     <!----- Intro ----->
     <div class="container">
       <section class="d-flex flex-column w-auto m-auto" id="intro">
-        <h1 class="p-3 fs-2 border-top border-3 justify-content-center align-items-center pt-5  text-center">
-          Construcción en seco, viviendas y ampliaciones en<span class="text-brown"> Wood Frame</span></h1>
+        <h2 class="p-3 fs-2 border-top border-3 justify-content-center align-items-center pt-5  text-center">
+          Construcción en seco, viviendas y ampliaciones en<span class="text-brown"> Wood Frame</span></h2>
         <p class="p-3  fs-4" id="texto-justificado">
           En <span class="text-brown">ADS</span> brindamos un servicio integral de construcción para que tu mayor
           responsabilidad sea organizar la mudanza a tu nueva casa. <span class="text-brown">Entregamos llave en
@@ -134,7 +134,7 @@
         <div class="col">
           <div class="card h-100">
             {% if page.6 != 'null' %}
-            <img class="img-fluid img-thumbnail" id="multi" src="/media/{{page.6|default_if_none:'#'}}"
+            <img class="img-fluid img-thumbnail" id="multi" loading="lazy" src="/media/{{page.6|default_if_none:'#'}}"
               alt="Card image cap">
             {% endif %}
             <div class="card-body">
@@ -147,6 +147,28 @@
           </div>
         </div>
         {% endfor %}
+
+        <div class="col" id="containergea">
+          <div class="card h-100">
+            <picture class="img-fluid img-thumbnail">
+              <a href="https://gearquitectura.com.ar/"
+              target="_blank">
+              <source srcset="{% static 'images/estudio-gea-city-bell-la-plata.webp' %}" type="image/webp">
+              <img src="{% static 'images/estudio-gea-city-bell-la-plata.jpg' %}" loading="lazy" alt="estudio-gea-city-bell-la-plata">
+              </a>
+            </picture>
+            <div class="card-body" id="gea">
+                <a href="https://gearquitectura.com.ar/"
+                target="_blank">
+                <h4 class="card-title" id="gea__title">Construimos en La Plata</h4>
+                </a>
+                <p class="card-text">En la región de La Plata, Berisso, Ensenada y localidades cercanas trabajamos junto a GEA Arquitectura.
+                  Podés solicitar una reunión en su estudio de arquitectura, ubicado en City Bell.
+                </p>
+            </div>
+          </div>
+        </div>
+
         {% for video in videos %}
         <div class="col">
           <div class="card-body">
@@ -172,13 +194,13 @@
       </div>
       <div class="row">
         <div class="col-12 col-md-4 col-sm-8">
-          <img class="img-fluid img-thumbnail" id="multi" src="/media/{{gallery.3|default_if_none:'#'}}"
+          <img class="img-fluid img-thumbnail" id="multi" loading="lazy" src="/media/{{gallery.3|default_if_none:'#'}}"
             alt="image gallery">
         </div>
 
         {% for galleryImg in galleriesImg %}
         <div class="col-12 col-md-4 col-sm-8">
-          <img class="img-fluid img-thumbnail" id="multi" src="/media/{{galleryImg.1|default_if_none:'#'}}"
+          <img class="img-fluid img-thumbnail" id="multi" loading="lazy" src="/media/{{galleryImg.1|default_if_none:'#'}}"
             alt="image gallery">
         </div>
         {% endfor %}
