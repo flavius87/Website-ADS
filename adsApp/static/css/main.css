@@ -156,7 +156,7 @@ a:link, a:visited, a:active {
 }
 
 #gea:hover {
-   background-color:  hsl(172, 58%, 39%) !important;
+   background-color:  hsla(172, 58%, 39%, 0.486) !important;
    border: 5px solid #f7f7f7;
    color: #fff !important;
  }
