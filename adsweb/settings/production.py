@@ -3,7 +3,7 @@ from decouple import config
 
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['website-ads.vercel.app']
+ALLOWED_HOSTS = ['*', 'https://website-ads-git-master-flavius87.vercel.app']
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
