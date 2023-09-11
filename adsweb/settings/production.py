@@ -1,5 +1,11 @@
 from .base import*
 from gunicorn import config
+from django.utils.encoding import force_str
+
+def _camelize_django_str(s):
+    if isinstance(s, Promise):
+        s = force_str(s)
+    return to_camel_case(s) if isinstance(s, six.string_types) else s
 
 
 DEBUG = True
