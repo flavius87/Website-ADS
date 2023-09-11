@@ -1,6 +1,7 @@
 from .base import*
 from gunicorn import config
 
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['*', '34.225.104.22']
