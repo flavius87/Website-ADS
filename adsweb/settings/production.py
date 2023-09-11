@@ -1,5 +1,8 @@
 from .base import*
 from gunicorn import config
+import django
+from django.utils.encoding import smart_str
+django.utils.encoding.smart_text = smart_str
 
 DEBUG = True
 
