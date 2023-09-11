@@ -3,7 +3,7 @@ from gunicorn import config
 
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', '34.225.104.22']
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
