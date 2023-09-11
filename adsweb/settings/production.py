@@ -10,10 +10,10 @@ ALLOWED_HOSTS = ['*', '34.225.104.22']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('POSTGRES_DATABASE'),
-        'USER': config('POSTGRES_USER'),
-        'PASSWORD': config('POSTGRES_PASSWORD'),
-        'HOST': config('POSTGRES_HOST'),
+        'NAME': 'adsbase',
+        'USER': 'admin',
+        'PASSWORD': 'IC2QRediGp7E',
+        'HOST': 'localhost',
         'PORT': '7472',
     }
 }
