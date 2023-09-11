@@ -1,7 +1,7 @@
 from .base import*
 from gunicorn import config
 
-DEBUG = config('DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = ['*', '34.225.104.22']
 # Database
