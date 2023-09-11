@@ -1,5 +1,5 @@
 from .base import*
-from decouple import config
+from gunicorn import config
 
 DEBUG = config('DEBUG')
 
