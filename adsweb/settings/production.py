@@ -4,7 +4,7 @@ from gunicorn import config
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.225.104.22', 'localhost']
+ALLOWED_HOSTS = ['0.0.0.0', '34.225.104.22', 'localhost']
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
