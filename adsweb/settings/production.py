@@ -19,7 +19,7 @@ DATABASES = {
     }
 }
 
-STATICFILES_DIRS = (BASE_DIR, 'static')
+#STATICFILES_DIRS = (BASE_DIR, 'static')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS=True
