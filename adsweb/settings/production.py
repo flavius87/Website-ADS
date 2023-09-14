@@ -1,31 +1,30 @@
 from .base import*
-from gunicorn import config
+from decouple import config
 
+DEBUG = config('DEBUG')
 
-DEBUG = True
-
-ALLOWED_HOSTS = ['0.0.0.0', '34.225.104.22', 'localhost']
+ALLOWED_HOSTS = ['*', '34.225.104.22']
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'adsbase',
-        'USER': 'admin',
-        'PASSWORD': 'IC2QRediGp7E',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': config('POSTGRES_DATABASE'),
+        'USER': config('POSTGRES_USER'),
+        'PASSWORD': config('POSTGRES_PASSWORD'),
+        'HOST': config('POSTGRES_HOST'),
+        'PORT': '7472',
     }
 }
 
-#STATICFILES_DIRS = (BASE_DIR, 'static')
+STATICFILES_DIRS = (BASE_DIR, 'static')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS=True
 EMAIL_HOST='smtp.gmail.com'
-EMAIL_HOST_USER='ads.construccionpampeana@gmail.com'
-EMAIL_HOST_PASSWORD='ads2022*'
+EMAIL_HOST_USER=config('EMAIL_HOST_USER') 
+EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD') 
 EMAIL_PORT=587
 
 # ckeditor
