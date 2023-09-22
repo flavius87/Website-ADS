@@ -3,7 +3,7 @@ from decouple import config
 
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['*']
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
