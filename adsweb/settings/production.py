@@ -1,3 +1,4 @@
+import dj_database_url
 from .base import*
 from decouple import config
 
@@ -9,7 +10,8 @@ ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'DEFAULT': dj_database_url.parse(os.environ.get("DATABASE_URL")),
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': config('POSTGRES_DATABASE'),
         'USER': config('POSTGRES_USER'),
         'PASSWORD': config('POSTGRES_PASSWORD'),

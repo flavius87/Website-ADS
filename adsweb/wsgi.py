@@ -15,8 +15,8 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'adsweb.settings.production')
 
 application = get_wsgi_application()
 
-from dj_static import Cling
-application = Cling(get_wsgi_application())
+#from dj_static import Cling
+#application = Cling(get_wsgi_application())
 
 #app = application
 
