@@ -15,7 +15,7 @@ DATABASES = {
         'PASSWORD': config('POSTGRES_PASSWORD'),
         'HOST': config('POSTGRES_HOST'),
         'URL': config('DATABASE_URL'),
-        'PORT': '7472',
+        'PORT': '5432',
     }
 }
 
