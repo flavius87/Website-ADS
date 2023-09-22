@@ -4,7 +4,7 @@ from decouple import config
 
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'https://adsweb.onrender.com']
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -17,7 +17,7 @@ DATABASES = {
         'PASSWORD': config('POSTGRES_PASSWORD'),
         'HOST': config('POSTGRES_HOST'),
         'URL': config('DATABASE_URL'),
-        'PORT': '7472',
+        'PORT': '10000',
     }
 }
 
